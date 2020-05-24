@@ -3,7 +3,7 @@ name: Content suggestion
 about: The standard content suggestion template
 title: ''
 labels: Next piece
-assignees: ''
+assignees: 'janethebot'
 
 ---
 
