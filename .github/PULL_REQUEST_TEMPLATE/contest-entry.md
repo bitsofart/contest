@@ -1,3 +1,11 @@
+---
+name: Content Submission
+about: The standard content submission template
+title: "Entry for this weeks contest"
+labels: Contest submission
+assignees: "janethebot"
+---
+
 # Contest submission
 
 You can talk about your submission here, so others will have a better context when evaluating it.
