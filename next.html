@@ -14,8 +14,13 @@
 <body>
   <main class="main">
     <div class="content">
-      <html><head>
-<!-- HAHAHA! Now I got you! --></head><body></body></html>
+      function(selector, context, r, opts) {
+    if (!(this instanceof initialize)) {
+      return new initialize(selector, context, r, opts);
+    }
+    opts = _.defaults(opts || {}, options);
+    return Cheerio.call(this, selector, context, r || root, opts);
+  }
     </div>
     <footer class="footer">
       <!-- We escape the handlebars for the style creator so it actually goes for the HTML. When this gets to the next
