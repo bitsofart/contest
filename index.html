@@ -14,12 +14,12 @@
 <body>
   <main class="main">
     <div class="content">
-      <h1>Hello world</h1>
-
+      <h1>Hello World!</h1>
     </div>
     <footer class="footer">
-      <!-- Fill in your css data here, but don't change anything else -->
-      <p class="paragraph">CSS by: <a href=""></a></p>
+      <!-- We escape the handlebars for the style creator so it actually goes for the HTML. When this gets to the next
+        step in the competition we can then still replace the style creator data using the same template  engine -->
+      <p class="paragraph">CSS by: <a href="{{style_creator_url}}">{{style_creator_handle}}</a></p>
       <p class="paragraph">Content by: <a href="https://github.com/vicnicius">vicnicius</a></p>
       <p class="paragraph">For more information, check the <a class="link" href="https://github.com/bitsofart/contest">Github repository.</a></p>
       <a class="logo-link" href="https://github.com/bitsofart/contest">
