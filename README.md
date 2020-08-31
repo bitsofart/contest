@@ -5,7 +5,9 @@
 ---
 
 # Welcome
-Welcome to our weekly community-driven automated contest that celebrates CSS craft. Our goal is to create a friendly corner on the web where challenge drives coders to inspire, entertain, and innovate, using HTML and CSS. 
+Welcome to our weekly community-driven automated contest that celebrates CSS craft. Our goal is to create a friendly corner on the web where challenge drives coders to inspire, entertain, and innovate, using HTML and CSS.
+
+**The basic idea of the contest**: each week, you have an HTML file with some content, and your goal is to create the CSS file that makes this a beautiful piece of web art.
 
 For the last week winner: [csscontest.com](https://csscontest.com)
 
