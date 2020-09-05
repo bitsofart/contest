@@ -1,139 +1,437 @@
-/* Neon effedt heavily inspired by George W. Park on this codepen (https://codepen.io/GeorgePark/pen/MrjbEr) */
+/* 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 🦆 */
 
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200..700&display=swap");
-
-:root {
-  /* Base font size */
-  font-size: 16px;
-
-  /* Set neon color */
-  --neon-text-color: #f40;
-  --neon-border-color: #08f;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,500&display=swap');
 
 body {
-  font-family: "Work Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  font-variation-settings: "wght" 300;
+  max-height: 100vh;
+  overflow-x: hidden;
+  font-size: clamp(100%, 4vw, 1.5em);
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  background-color:silver;
+  background-image:
+    radial-gradient(circle at 100% 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50% 100%, white 10%, silver 10%, silver 23%, white 23%, white 30%, silver 30%, silver 43%, white 43%, white 50%, silver 50%, silver 63%, white 63%, white 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0 50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent);
+  background-size: 100px 50px;
+}
+
+main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0f0c29;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  min-height: 100vh;
+  flex-direction: column-reverse;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top: 5em;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.content {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) 50px, transparent 100px);
-  background-position: 0 0px;
-  background-repeat: no-repeat;
-  max-width: 90vw;
-  margin: 0 1rem;
-}
-
-h1 {
-  animation: flicker 1.5s infinite alternate;
-  border-radius: 2rem;
-  border: .2rem solid #fff;
-  color: #fff;
-  font-size: 3rem;
-  font-variation-settings: "wght" 300;
-  font-weight: 300;
-  mix-blend-mode: color-dodge;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-@media screen and (min-width: 320px) {
-  h1 {
-    font-size: 4rem;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  h1 {
-    font-size: 7rem;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  h1 {
-    font-size: 9rem;
-    padding: 3rem 4rem;
-  }
-}
-
-h1::-moz-selection {
-  background-color: var(--neon-border-color);
-  color: var(--neon-text-color);
-}
-
-h1::selection {
-  background-color: var(--neon-border-color);
-  color: var(--neon-text-color);
-}
-
-h1:focus {
-  outline: none;
+.content, .footer {
+  display: inline-block;
 }
 
 .footer {
-  bottom: 0;
-  color: white;
-  padding: 3rem 1rem 1rem;
-  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-style: italic;
+  font-weight: 500;
 }
 
-.paragraph {
-  font-size: .75rem;
+.footer p {
+  display: inline-block;
+  transform: rotate(-25deg);
+  height: 2em;
+  padding: 0.25em;
+  background-color: hsl(212, 70%, 62%);
+  background: linear-gradient(hsl(212, 70%, 62%) 0%, 	hsl(213, 89%, 29%) 100%);
+}
+.footer p::after {
+  content: '☝';
+  display: block;
+  width: 1.25em;
+  height: 1.25em;
+  margin: 0.5em auto;
+  font-size: 2em;
+  font-style: initial;
+  transform-origin: 50% 100%;
+  animation: point .5s ease-in-out infinite alternate;
 }
 
-.paragraph a,
-.paragraph a:visited {
-  color: white;
+h1 {
+  text-align: right;
+  word-spacing: 100vw;
+  font-size: 8em;
+  color: hsl(221, 44%, 19%);
+  filter:
+    drop-shadow(5px -2.5px hsl(212, 70%, 62%))
+    drop-shadow(5px -2.5px hsl(214, 42%, 26%));
+}
+
+em:hover {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: intensify 5s ease-out;
+}
+
+p {
   font-weight: bold;
-  font-variation-settings: "wght" 700;
+}
+a, a:visited, a:hover, a:active {
+  display: block;
+  margin: 0 auto;
+  font-weight: initial;
+  text-decoration: none;
+  color: hsl(330, 100%, 50%);
 }
 
 .logo {
-  width: 15rem;
-}
-.logo path {
-  fill: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: ivory;
+  mix-blend-mode: difference;
+  filter: invert(100%);
 }
 
-/* Animate neon flicker */
-@keyframes flicker {
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
-      0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
-      0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
-      0 0 10rem var(--neon-text-color);
-
-    box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
-      0 0 2rem var(--neon-border-color), inset 0 0 2rem var(--neon-border-color),
-      0 0 4rem var(--neon-border-color), inset 0 0 4rem var(--neon-border-color);
+@media (max-width: 980px) {
+  main {
+    display: grid;
+    padding-top: initial;
   }
 
-  20%,
-  24%,
+  h1 {
+    display: inline-block;
+    text-align: right;
+    font-size: 3em;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    right: 0;
+    margin-left: 50%;
+  }
+
+  .footer p {
+    margin-top: 3em;
+    font-size: 16px;
+  }
+  .footer p::after {
+    font-size: 24px;
+  }
+}
+
+@keyframes point {
+  from { transform: translateX(-0%) rotate(-25deg); }
+  to { transform: translateX(150%) rotate(45deg); }
+}
+
+/* https://github.com/tholman/obnoxious.css/blob/master/obnoxious.css */
+@keyframes intensify {
+  0% {
+    transform: translate(1px, 1px) scale(1);
+  }
+  1% {
+    transform: translate(-1px, -1px) scale(1.02);
+  }
+  2% {
+    transform: translate(1px, 2px) scale(1.04);
+  }
+  3% {
+    transform: translate(-3px, -1px) scale(1.06);
+  }
+  4% {
+    transform: translate(3px, 3px) scale(1.08);
+  }
+  5% {
+    transform: translate(-4px, -5px) scale(1.1);
+  }
+  6% {
+    transform: translate(4px, 4px) scale(1.12);
+  }
+  7% {
+    transform: translate(-1px, -2px) scale(1.14);
+  }
+  8% {
+    transform: translate(5px, 1px) scale(1.16);
+  }
+  9% {
+    transform: translate(-4px, -10px) scale(1.18);
+  }
+  10% {
+    transform: translate(7px, 7px) scale(1.2);
+  }
+  11% {
+    transform: translate(-8px, -7px) scale(1.22);
+  }
+  12% {
+    transform: translate(1px, 8px) scale(1.24);
+  }
+  13% {
+    transform: translate(-2px, -10px) scale(1.26);
+  }
+  14% {
+    transform: translate(14px, 7px) scale(1.28);
+  }
+  15% {
+    transform: translate(-14px, -6px) scale(1.3);
+  }
+  16% {
+    transform: translate(2px, 6px) scale(1.32);
+  }
+  17% {
+    transform: translate(-16px, -4px) scale(1.34);
+  }
+  18% {
+    transform: translate(11px, 12px) scale(1.36);
+  }
+  19% {
+    transform: translate(-4px, -17px) scale(1.38);
+  }
+  20% {
+    transform: translate(12px, 7px) scale(1.4);
+  }
+  21% {
+    transform: translate(-11px, -13px) scale(1.42);
+  }
+  22% {
+    transform: translate(4px, 22px) scale(1.44);
+  }
+  23% {
+    transform: translate(-13px, -24px) scale(1.46);
+  }
+  24% {
+    transform: translate(23px, 5px) scale(1.48);
+  }
+  25% {
+    transform: translate(-15px, -16px) scale(1.5);
+  }
+  26% {
+    transform: translate(16px, 7px) scale(1.52);
+  }
+  27% {
+    transform: translate(-25px, -11px) scale(1.54);
+  }
+  28% {
+    transform: translate(25px, 20px) scale(1.56);
+  }
+  29% {
+    transform: translate(-16px, -20px) scale(1.58);
+  }
+  30% {
+    transform: translate(12px, 23px) scale(1.6);
+  }
+  31% {
+    transform: translate(-15px, -18px) scale(1.62);
+  }
+  32% {
+    transform: translate(3px, 27px) scale(1.64);
+  }
+  33% {
+    transform: translate(-18px, -14px) scale(1.66);
+  }
+  34% {
+    transform: translate(14px, 9px) scale(1.68);
+  }
+  35% {
+    transform: translate(-28px, -23px) scale(1.7);
+  }
+  36% {
+    transform: translate(12px, 30px) scale(1.72);
+  }
+  37% {
+    transform: translate(-25px, -27px) scale(1.74);
+  }
+  38% {
+    transform: translate(39px, 1px) scale(1.76);
+  }
+  39% {
+    transform: translate(-10px, -32px) scale(1.78);
+  }
+  40% {
+    transform: translate(15px, 35px) scale(1.8);
+  }
+  41% {
+    transform: translate(-27px, -15px) scale(1.82);
+  }
+  42% {
+    transform: translate(15px, 41px) scale(1.84);
+  }
+  43% {
+    transform: translate(-39px, -4px) scale(1.86);
+  }
+  44% {
+    transform: translate(34px, 19px) scale(1.88);
+  }
+  45% {
+    transform: translate(-4px, -45px) scale(1.9);
+  }
+  46% {
+    transform: translate(38px, 7px) scale(1.92);
+  }
+  47% {
+    transform: translate(-21px, -1px) scale(1.94);
+  }
+  48% {
+    transform: translate(19px, 6px) scale(1.96);
+  }
+  49% {
+    transform: translate(-49px, -25px) scale(1.98);
+  }
+  50% {
+    transform: translate(25px, 25px) scale(2);
+  }
+  51% {
+    transform: translate(-33px, -24px) scale(2.02);
+  }
+  52% {
+    transform: translate(45px, 36px) scale(2.04);
+  }
+  53% {
+    transform: translate(-44px, -7px) scale(2.06);
+  }
+  54% {
+    transform: translate(30px, 28px) scale(2.08);
+  }
   55% {
-    text-shadow: none;
-    box-shadow: none;
+    transform: translate(-4px, -27px) scale(2.1);
+  }
+  56% {
+    transform: translate(17px, 18px) scale(2.12);
+  }
+  57% {
+    transform: translate(-4px, -12px) scale(2.14);
+  }
+  58% {
+    transform: translate(1px, 50px) scale(2.16);
+  }
+  59% {
+    transform: translate(-8px, -36px) scale(2.18);
+  }
+  60% {
+    transform: translate(29px, 26px) scale(2.2);
+  }
+  61% {
+    transform: translate(-24px, -21px) scale(2.22);
+  }
+  62% {
+    transform: translate(60px, 21px) scale(2.24);
+  }
+  63% {
+    transform: translate(-9px, -36px) scale(2.26);
+  }
+  64% {
+    transform: translate(44px, 1px) scale(2.28);
+  }
+  65% {
+    transform: translate(-38px, -40px) scale(2.3);
+  }
+  66% {
+    transform: translate(42px, 33px) scale(2.32);
+  }
+  67% {
+    transform: translate(-17px, -45px) scale(2.34);
+  }
+  68% {
+    transform: translate(1px, 17px) scale(2.36);
+  }
+  69% {
+    transform: translate(-20px, -62px) scale(2.38);
+  }
+  70% {
+    transform: translate(6px, 53px) scale(2.4);
+  }
+  71% {
+    transform: translate(-64px, -14px) scale(2.42);
+  }
+  72% {
+    transform: translate(67px, 48px) scale(2.44);
+  }
+  73% {
+    transform: translate(-47px, -39px) scale(2.46);
+  }
+  74% {
+    transform: translate(5px, 62px) scale(2.48);
+  }
+  75% {
+    transform: translate(-29px, -50px) scale(2.5);
+  }
+  76% {
+    transform: translate(5px, 60px) scale(2.52);
+  }
+  77% {
+    transform: translate(-51px, -76px) scale(2.54);
+  }
+  78% {
+    transform: translate(58px, 16px) scale(2.56);
+  }
+  79% {
+    transform: translate(-79px, -32px) scale(2.58);
+  }
+  80% {
+    transform: translate(41px, 22px) scale(2.6);
+  }
+  81% {
+    transform: translate(-43px, -48px) scale(2.62);
+  }
+  82% {
+    transform: translate(35px, 65px) scale(2.64);
+  }
+  83% {
+    transform: translate(-65px, -84px) scale(2.66);
+  }
+  84% {
+    transform: translate(62px, 73px) scale(2.68);
+  }
+  85% {
+    transform: translate(-48px, -40px) scale(2.7);
+  }
+  86% {
+    transform: translate(30px, 25px) scale(2.72);
+  }
+  87% {
+    transform: translate(-16px, -46px) scale(2.74);
+  }
+  88% {
+    transform: translate(81px, 73px) scale(2.76);
+  }
+  89% {
+    transform: translate(-79px, -76px) scale(2.78);
+  }
+  90% {
+    transform: translate(55px, 62px) scale(2.8);
+  }
+  91% {
+    transform: translate(-44px, -56px) scale(2.82);
+  }
+  92% {
+    transform: translate(46px, 91px) scale(2.84);
+  }
+  93% {
+    transform: translate(-48px, -34px) scale(2.86);
+  }
+  94% {
+    transform: translate(18px, 10px) scale(2.88);
+  }
+  95% {
+    transform: translate(-11px, -4px) scale(2.9);
+  }
+  96% {
+    transform: translate(14px, 80px) scale(2.92);
+  }
+  97% {
+    transform: translate(-29px, -54px) scale(2.94);
+  }
+  98% {
+    transform: translate(51px, 95px) scale(2.96);
+  }
+  99% {
+    transform: translate(-71px, -4px) scale(2.98);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
   }
 }
