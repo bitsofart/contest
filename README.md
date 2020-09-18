@@ -13,8 +13,6 @@ For the last week winner: [csscontest.com](https://csscontest.com)
 
 Every interaction related to the contest is automated, with the help of [@janethebot](https://github.com/janethebot), and the code behind the automation is here: [github.com/bitsofart/jane](https://github.com/bitsofart/jane). The website code is here: [github.com/bitsofart/csscontest.com](https://github.com/bitsofart/csscontest.com).
 
-⚠️ _This experimental project is still on its early test phase. Ideas, fixes and contributions are welcome!_ ⚠️
-
 ## How to win:
   1. Fork this repo.
   2. Copy the contents of the next.html file into index.html.
